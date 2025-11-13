@@ -28,7 +28,6 @@ Through this project, I learned how to:
 - Admin dashboard for advanced analytics  
 
 ## Author
-**Kenzie Ahnaf Firdaus**  
 GitHub: [github.com/alfirda0us](https://github.com/alfirda0us)  
 
 ## License
