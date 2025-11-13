@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/css/output.css" rel="stylesheet">
+  <title>Tambah Laporan | E-Report Sekolah</title>
+</head>
+<body class="bg-slate-950 text-white font-sans">
+  <!-- Navigation -->
+  <nav class="bg-slate-900 border-b border-slate-800 px-8 py-4 flex justify-between items-center">
+    <a class="text-xl font-semibold text-white no-underline" href="index.html">E-Report</a>
+    <div class="flex gap-8 items-center">
+      <a href="index.html" class="text-slate-400 no-underline text-sm hover:text-blue-500 transition-colors">Dashboard</a>
+      <a href="reports.html" class="text-slate-400 no-underline text-sm hover:text-blue-500 transition-colors">Laporan</a>
+      <a href="add-report.html" class="bg-blue-600 text-white border-none py-2 px-6 rounded cursor-pointer text-sm font-medium hover:bg-blue-700 transition-colors no-underline">+ Laporan Baru</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-2xl mx-auto px-8 py-12">
+    <h2 class="text-3xl font-bold mb-8">Tambah Laporan Baru</h2>
+    
+    <form id="report-form">
+      <div class="mb-6">
+        <label class="block mb-2 font-medium text-white">Nama Fasilitas</label>
+        <input type="text" class="w-full bg-slate-900 border border-slate-700 rounded py-2 px-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors" id="facilityName" required>
+      </div>
+
+      <div class="mb-6">
+        <label class="block mb-2 font-medium text-white">Deskripsi Masalah</label>
+        <textarea class="w-full bg-slate-900 border border-slate-700 rounded py-2 px-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors resize-vertical min-h-32" id="description" required></textarea>
+      </div>
+
+      <div class="mb-6">
+        <label class="block mb-2 font-medium text-white">Status</label>
+        <select id="status" class="w-full bg-slate-900 border border-slate-700 rounded py-2 px-4 text-white cursor-pointer focus:outline-none focus:border-blue-500 transition-colors" required>
+          <option value="Baru">Baru</option>
+          <option value="Diproses">Diproses</option>
+          <option value="Selesai">Selesai</option>
+        </select>
+      </div>
+
+      <div class="mb-6">
+        <label class="block mb-2 font-medium text-white">Foto Fasilitas (Opsional)</label>
+        <input type="file" class="w-full bg-slate-900 border border-slate-700 rounded py-2 px-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors cursor-pointer" id="imageInput" accept="image/*">
+      </div>
+
+      <div class="flex gap-4 mt-8">
+        <button type="submit" class="flex-1 bg-green-600 text-white border-none py-3 px-8 rounded font-medium text-base hover:bg-green-700 transition-colors cursor-pointer">Simpan</button>
+        <a href="reports.html" class="flex-1 bg-transparent border border-slate-700 text-slate-400 py-3 px-8 rounded font-medium text-base hover:border-blue-500 hover:text-blue-500 transition-all no-underline flex items-center justify-center">Kembali</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="assets/js/add-report.js"></script>
+</body>
+</html>
