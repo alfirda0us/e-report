@@ -15,8 +15,8 @@ if (report) {
 
   // Set status badge
   const statusElement = document.getElementById('reportStatus');
-  const statusClass = report.status === "Selesai" ? "bg-emerald-500/20 text-emerald-400" :
-                     report.status === "Diproses" ? "bg-amber-500/20 text-amber-400" :
+  const statusClass = report.status === "Selesai" ? "bg-blue-500/20 text-blue-400" :
+                     report.status === "Diproses" ? "bg-blue-500/20 text-blue-400" :
                      "bg-blue-500/20 text-blue-400";
   statusElement.className = `inline-block px-4 py-2 rounded-full text-sm font-semibold ${statusClass}`;
   statusElement.innerText = report.status;

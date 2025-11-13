@@ -26,10 +26,10 @@ function updateDashboard() {
         report.status === "Baru"
           ? "bg-blue-500/20 text-blue-400"
           : report.status === "Diproses"
-            ? "bg-amber-500/20 text-amber-400"
-            : "bg-emerald-500/20 text-emerald-400"
+            ? "bg-blue-500/20 text-blue-400"
+            : "bg-blue-500/20 text-blue-400"
       return `
-        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 hover:border-blue-500 hover:shadow-xl transition-all">
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 hover:border-blue-500 hover:shadow-xl transition-all mb-5">
           <div class="flex justify-between items-start mb-4">
             <h3 class="text-lg font-semibold text-white">${report.name}</h3>
             <span class="px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${statusClass}">${report.status}</span>

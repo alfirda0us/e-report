@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="assets/css/output.css" rel="stylesheet">
-  <title>Daftar Laporan | E-Report Sekolah</title>
+  <title>E-Report Fasilitas Sekolah</title>
 </head>
 <body class="bg-slate-950 text-white font-sans">
 
@@ -12,32 +12,57 @@
   <nav class="bg-slate-900 border-b border-slate-800 px-8 py-4 flex justify-between items-center sticky top-0 z-50">
     <a class="text-xl font-semibold text-white no-underline" href="index.html">E-Report</a>
     <div class="flex gap-8 items-center">
-      <a href="dashboard.html" class="text-slate-400 no-underline text-sm hover:text-blue-500 transition-colors">Dashboard</a>
+      <a href="#dashboard" class="text-slate-400 no-underline text-sm hover:text-blue-500 transition-colors">Dashboard</a>
       <a href="reports.html" class="text-slate-400 no-underline text-sm hover:text-blue-500 transition-colors">Laporan</a>
       <a href="add-report.html" class="bg-blue-600 text-white border-none py-2 px-6 rounded cursor-pointer text-sm font-medium hover:bg-blue-700 transition-colors no-underline">+ Laporan Baru</a>
     </div>
   </nav>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-8 py-12">
-    <h2 class="text-3xl font-bold mb-8">Daftar Laporan Fasilitas</h2>
-
-    <!-- Filter Section -->
-    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <input type="text" id="searchInput" class="bg-slate-950 border border-slate-700 rounded py-2 px-4 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors" placeholder="Cari laporan...">
-      <select id="filterStatus" class="bg-slate-950 border border-slate-700 rounded py-2 px-4 text-white cursor-pointer focus:outline-none focus:border-blue-500 transition-colors">
-        <option value="">Semua Status</option>
-        <option value="Baru">Baru</option>
-        <option value="Diproses">Diproses</option>
-        <option value="Selesai">Selesai</option>
-      </select>
-      <button class="bg-blue-600 text-white border-none py-2 px-6 rounded cursor-pointer font-medium text-sm hover:bg-blue-700 transition-colors" id="applyFilter">Apply</button>
-      <button class="bg-transparent border border-slate-700 text-slate-400 py-2 px-6 rounded cursor-pointer font-medium text-sm hover:border-blue-500 hover:text-blue-500 transition-all" id="clearFilter">Reset</button>
+  <main id="dashboard" class="max-w-5xl mx-auto px-8 py-12">
+    <div class="mb-12">
+      <h1 class="text-4xl font-bold mb-2">Dashboard E-Report</h1>
+      <p class="text-slate-400 text-sm">Kelola laporan fasilitas sekolah Anda</p>
     </div>
 
-    <!-- Report List -->
-    <div id="reportList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    <p id="filterStatusInfo" class="text-slate-400"></p>
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 transition-all hover:border-blue-500 hover:shadow-lg cursor-pointer hover:scale-105">
+        <div class="text-4xl font-bold mb-2" id="totalReports">0</div>
+        <div class="text-slate-400 text-sm">Total Laporan</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 transition-all hover:border-blue-500 hover:shadow-lg cursor-pointer hover:scale-105">
+        <div class="text-4xl font-bold mb-2" id="newReports">0</div>
+        <div class="text-slate-400 text-sm">Status: Baru</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 transition-all hover:border-blue-500 hover:shadow-lg cursor-pointer hover:scale-105">
+        <div class="text-4xl font-bold mb-2" id="processReports">0</div>
+        <div class="text-slate-400 text-sm">Status: Diproses</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 transition-all hover:border-blue-500 hover:shadow-lg cursor-pointer hover:scale-105">
+        <div class="text-4xl font-bold mb-2" id="doneReports">0</div>
+        <div class="text-slate-400 text-sm">Status: Selesai</div>
+      </div>
+    </div>
+
+    <!-- Recent Reports Section -->
+    <div class="mb-12">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold">Laporan Terbaru</h2>
+        <a href="reports.html" class="bg-transparent border border-slate-700 text-slate-400 py-2 px-6 rounded cursor-pointer text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-all no-underline">Lihat Semua</a>
+      </div>
+      <div id="recentReports">
+        <div class="text-center py-12 text-slate-400">
+          <p>Belum ada laporan. Mulai dengan membuat laporan baru.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="flex gap-4 flex-wrap">
+      <button class="bg-blue-600 hover:bg-blue-700 text-white border-none py-3 px-8 rounded-lg font-medium text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer" onclick="window.location.href='add-report.html'">+ Tambah Laporan Baru</button>
+      <button class="bg-transparent border border-slate-700 text-slate-400 py-3 px-8 rounded-lg font-medium text-base transition-all duration-300 hover:border-blue-500 hover:text-blue-500 transform hover:scale-105 cursor-pointer" onclick="window.location.href='reports.html'">Lihat Semua Laporan</button>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -82,6 +107,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/reports.js"></script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>

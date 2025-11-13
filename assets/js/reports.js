@@ -26,9 +26,9 @@ function renderReports(reports) {
   reports.forEach((r) => {
     const statusClass =
       r.status === "Selesai"
-        ? "bg-emerald-500/20 text-emerald-400"
+        ? "bg-blue-500/20 text-blue-400"
         : r.status === "Diproses"
-          ? "bg-amber-500/20 text-amber-400"
+          ? "bg-blue-500/20 text-blue-400"
           : "bg-blue-500/20 text-blue-400"
 
     reportList.innerHTML += `
