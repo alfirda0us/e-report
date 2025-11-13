@@ -10,10 +10,9 @@ E-Report is a web-based application designed to help schools manage student grad
 - Responsive layout with Bootstrap  
 
 ## Technologies Used
-- HTML5  
-- CSS3  
-- JavaScript (ES6)  
-- Bootstrap 5  
+- HTML
+- TailwindCSS  
+- JavaScript
 
 ## What I Learned
 Through this project, I learned how to:
